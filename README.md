@@ -1,5 +1,6 @@
 # Watson apis test resources
 [![Build Status](https://travis-ci.org/germanattanasio/watson-test-resources.svg?branch=master)](https://travis-ci.org/germanattanasio/watson-test-resources)
+[![codecov.io](https://codecov.io/github/germanattanasio/watson-test-resources/coverage.svg?branch=master)](https://codecov.io/github/germanattanasio/watson-test-resources?branch=master)
 
 Web application to host audio, images, text files (See `public/resources`)
 that can be use to test the Watson APIs
