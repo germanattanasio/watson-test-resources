@@ -1,4 +1,6 @@
 # Watson apis test resources
+[![Build Status](https://travis-ci.org/germanattanasio/watson-test-resources.svg?branch=master)](https://travis-ci.org/germanattanasio/watson-test-resources)
+
 Web application to host audio, images, text files (See `public/resources`)
 that can be use to test the Watson APIs
 
