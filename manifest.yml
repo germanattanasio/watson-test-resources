@@ -1,5 +1,6 @@
 applications:
 - path: .
+  command: npm start
   memory: 256M
   name: watson-test-resources
   services:

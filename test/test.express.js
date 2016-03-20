@@ -13,17 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 'use strict';
 
-var express = require('express'),
-  app = express();
+var app = require('../app');
+var request = require('supertest');
 
+describe('express', function() {
+  it('show a home pagewhen GET /', function (done) {
+    request(app)
+      .get('/')
+      .expect(200, done);
+  });
 
-// Bootstrap application settings
-require('./config/express')(app);
+  it('404 when resource not found', function (done) {
+    request(app)
+      .get('/foo/bar')
+      .expect(404, done);
+  });
 
-// error-handler settings
-require('./config/error-handler')(app);
-
-module.exports = app;
+  it('200 when resource found', function (done) {
+    request(app)
+      .get('/resources/car.png')
+      .expect(200, done);
+  });
+});

@@ -2,6 +2,7 @@
 Web application to host audio, images, text files (See `public/resources`)
 that can be use to test the Watson APIs
 
+Demo: https://watson-test-resources.mybluemix.net
 
 ## Getting Started
 
