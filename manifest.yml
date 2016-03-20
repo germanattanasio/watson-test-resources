@@ -1,0 +1,23 @@
+applications:
+- path: .
+  memory: 256M
+  name: sdk-app
+  services:
+  - concept_expansion_beta_sdk
+  - concept_insights_sdk
+  - dialog_sdk
+  - document_conversion_standard_sdk
+  - language_translation_sdk
+  - natural_language_classifier_sdk
+  - personality_insights_sdk
+  - relationship_extraction_beta_sdk
+  - retrieve_and_rank_sdk
+  - speech_to_text_sdk
+  - text_to_speech_sdk
+  - tone_analyzer_beta_sdk
+  - tradeoff_analytics_sdk
+  - visual_insights_experimental_sdk
+  - visual_recognition_beta_sdk
+  env:
+    NODE_ENV: production
+    SECURE_EXPRESS: 1
