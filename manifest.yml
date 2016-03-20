@@ -1,7 +1,7 @@
 applications:
 - path: .
   memory: 256M
-  name: sdk-app
+  name: watson-test-resources
   services:
   - concept_expansion_beta_sdk
   - concept_insights_sdk
