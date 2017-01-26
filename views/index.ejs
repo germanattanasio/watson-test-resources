@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IBM Watson SDK Resources</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h1>IBM Watson SDK Resources</h1>
+
+  <p>Resources used to test the <a href="https://github.com/watson-developer-cloud">Watson Developer Cloud SDKs</a>. Source available on <a href="https://github.com/germanattanasio/watson-test-resources/">Github</a>.</p>
+
+  <div class="resources">
+
+    <div class="resource-list images">
+      <h2>Images</h2>
+      <ul>
+        <% images.forEach(name => { %>
+        <% url = 'resources/' + name %>
+        <li>
+          <a href="<%= url %>"><img src="<%= url %>" alt="<%= name %>" /></a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="resource-list audio">
+      <h2>Audio</h2>
+      <ul>
+        <% audio.forEach(name => { %>
+        <% url = 'resources/' + name %>
+        <li>
+          <p><a href="<%= url %>"><%= name %></a>:</p>
+          <p><audio src="<%= url %>" controls/></p>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="resource-list other">
+      <h2>Other</h2>
+      <ul>
+        <% other.forEach(name => { %>
+        <% url = 'resources/' + name %>
+        <li>
+          <a href="<%= url %>"><%= name %></a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+</body>
+</html>
