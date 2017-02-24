@@ -44,7 +44,7 @@
     </div>
 
     <div class="resource-list other">
-      <h2>Other</h2>
+      <h2>Other Resources</h2>
       <ul>
         <% other.forEach(name => { %>
         <% url = 'resources/' + name %>
@@ -53,13 +53,17 @@
         </li>
         <% }) %>
       </ul>
+
+      <h2>Speech to Text async callback endpoints</h2>
+      <ul>
+        <li><a href="/speech-to-text-async-callback-insecure">/speech-to-text-async-callback-insecure</a> - no signature validation</li>
+        <li><a href="/speech-to-text-async-callback-secure">/speech-to-text-async-callback-secure</a> - validates the <code>X-Callback-Signature</code> header with the secret <code>ThisIsMySecret</code></li>
+      </ul>
     </div>
 
   </div>
 
 </div>
-
-
 
 </body>
 </html>

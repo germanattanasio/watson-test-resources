@@ -17,18 +17,12 @@
 'use strict';
 
 // Module dependencies
-var express    = require('express'),
-  bodyParser   = require('body-parser');
+var express    = require('express');
 
 module.exports = function (app) {
   // Only loaded when SECURE_EXPRESS is `true`
   if (process.env.SECURE_EXPRESS)
     require('./security')(app);
-
-
-  // Configure Express
-  app.use(bodyParser.urlencoded({ extended: true}));
-  app.use(bodyParser.json());
 
   // Setup static public directory
   app.use(express.static(__dirname + '/../public'));

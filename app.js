@@ -31,23 +31,28 @@ const audioRe = /\.(wav|flac|ogg|opus)$/;
 const resourcesDir = path.join(__dirname, 'public/resources');
 
 app.get('/', function(req, res) {
-    fs.readdir(resourcesDir, (err, files) => {
-        if (err) {
-            console.log(err);
-            res.status(500).end('Error reading files list');
-        }
+  fs.readdir(resourcesDir, (err, files) => {
+    if (err) {
+      console.log(err);
+      res.status(500).end('Error reading files list');
+    }
 
-        const fileGroups = _.groupBy(files, function(file) {
-            if (imageRe.test(file)) {
-                return 'images';
-            } else if (audioRe.test(file)) {
-                return 'audio'
-            } else {
-                return 'other'
-            }
-        });
-        res.render('index', fileGroups);
+    const fileGroups = _.groupBy(files, function(file) {
+      if (imageRe.test(file)) {
+        return 'images';
+      } else if (audioRe.test(file)) {
+        return 'audio'
+      } else {
+        return 'other'
+      }
     });
+    res.render('index', fileGroups);
+  });
 });
+
+// for testing Speech to Text async callbacks
+const sttCallbackGenerator = require('./speech-to-text-async-callback');
+app.use('/speech-to-text-async-callback-insecure', sttCallbackGenerator());
+app.use('/speech-to-text-async-callback-secure', sttCallbackGenerator('ThisIsMySecret'));
 
 module.exports = app;
