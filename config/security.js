@@ -17,7 +17,7 @@
 'use strict';
 
 // security.js
-var secure  = require('express-secure-only'),
+var secret  = require('express-secure-only'),
   rateLimit = require('express-rate-limit'),
   helmet    = require('helmet');
 
@@ -25,7 +25,7 @@ module.exports = function (app) {
   app.enable('trust proxy');
 
   // 1. redirects http to https
-  app.use(secure());
+  app.use(secret());
 
   // 2. helmet with defaults
   app.use(helmet());

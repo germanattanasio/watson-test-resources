@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IBM Watson SDK Resources</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+<div class="container stt-async">
+  <h1>IBM Watson Speech to Text Asynchronous HTTP Interface helpers</h1>
+  <h2>Mock Callback and Logs (<%= secret ? 'Validated' : 'No Signature Validation' %>)</h2>
+  <p class="breadcrumbs"><a href="/">&laquo; back</a></p>
+
+  <p>This server implements both validated and unvalidated mock callback URLs for the <a href="https://www.ibm.com/watson/developercloud/doc/speech-to-text/async.shtml">asynchronous HTTP interface</a>.
+    This page is <%= secret ? 'validated' : 'unvalidated' %></p>
+
+  <p><% if (secret) { %>
+      The secure callback url is <a href="<%= callbackUrl %>"><%= callbackUrl %></a>, and the <code>user_secret</code> is <code><%= secret %></code>.
+      A log of recent requests and signature checking info is shown below:
+    <% } else { %>
+      The insecure callback url is <a href="<%= callbackUrl %>"><%= callbackUrl %></a>, a log of recent requests is shown below:
+    <% } %>
+  </p>
+  <p></p>
+
+  <ul>
+    <% events.forEach(event => { %>
+    <li class="">
+      <code class="lang-json"><pre><%= JSON.stringify(event, null, 2) %></pre></code>
+    </li>
+    <% }) %>
+  </ul>
+
+</div>
+
+</body>
+</html>

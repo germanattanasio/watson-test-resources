@@ -51,8 +51,8 @@ app.get('/', function(req, res) {
 });
 
 // for testing Speech to Text async callbacks
-const sttCallbackGenerator = require('./speech-to-text-async-callback');
-app.use('/speech-to-text-async-callback-insecure', sttCallbackGenerator());
-app.use('/speech-to-text-async-callback-secure', sttCallbackGenerator('ThisIsMySecret'));
+const sttCallbackGenerator = require('./speech-to-text-async');
+app.use('/speech-to-text-async/insecure', sttCallbackGenerator());
+app.use('/speech-to-text-async/secure', sttCallbackGenerator('ThisIsMySecret'));
 
 module.exports = app;
