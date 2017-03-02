@@ -55,4 +55,10 @@ const sttCallbackGenerator = require('./speech-to-text-async');
 app.use('/speech-to-text-async/insecure', sttCallbackGenerator());
 app.use('/speech-to-text-async/secure', sttCallbackGenerator('ThisIsMySecret'));
 
+
+// backwards-compatibility fixes for now-renamed files
+app.get('/resources/audio.ogg', (req, res) => res.sendFile(path.join(__dirname, 'public/resources/text-to-speech-output.ogg')));
+app.get('/resources/audio.wav', (req, res) => res.sendFile(path.join(__dirname, 'public/resources/weather.wav')));
+app.get('/resources/tts-output.ogg', (req, res) => res.sendFile(path.join(__dirname, 'public/resources/text-to-speech-bad-request.ogg')));
+
 module.exports = app;
