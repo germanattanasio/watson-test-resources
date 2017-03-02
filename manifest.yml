@@ -3,6 +3,7 @@ applications:
   command: npm start
   memory: 256M
   name: watson-test-resources
+  buildpack: sdk-for-nodejs
   services:
   - concept_expansion_beta_sdk
   - concept_insights_sdk
